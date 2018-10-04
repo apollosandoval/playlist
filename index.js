@@ -1,13 +1,16 @@
 (function() {
     let albumUrl = 'https://lit-fortress-6467.herokuapp.com/object';
     let playlistUrl = '';
+    let railroadContainer = document.querySelector('#tracks');
 
     axios.get(albumUrl)
         .then ( response => {
             let albums = response.data.results;
             
             let randomAlbums = noRepeatCovers(albums);
-            console.log(randomAlbums);
+            randomAlbums.forEach( album => {
+                generateAlbumCover(album);
+            });
         })
         .catch( err => {
             console.log(err);
@@ -27,7 +30,13 @@
         return randomCollection;
     }
 
-    function populateTracks(albumArray) {
-        
+    function generateAlbumCover(album) {
+        let albumEl = document.createElement('div');
+
+        albumEl.className = 'album_container';
+        albumEl.setAttribute('id', `album${album.id}`);
+        albumEl.innerHTML = `<img src='images/${album.cover_art}'>`
+
+        railroadContainer.appendChild(albumEl);
     }
 })();
