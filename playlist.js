@@ -5,6 +5,7 @@
     let albums = [];
     let clearBtn = document.querySelector('#clearBtn');
     let submitBtn = document.querySelector('#submitBtn');
+    let textArea = document.querySelector('.textarea');
 
     axios.get(albumUrl)
         .then( response => {
@@ -23,7 +24,7 @@
 
         albumEl.className = 'album_container';
         albumEl.setAttribute('id', `album${album.id}`);
-        albumEl.innerHTML = `<img src='images/${album.cover_art}'>`
+        albumEl.innerHTML = `<img src='images/${album.cover_art}' id='${album.id}'>`
 
         scrollWrapper.appendChild(albumEl);
     }
@@ -37,7 +38,19 @@
         console.log('post');
     }
 
+    let addToBin = function(event) {
+        console.log(event.target.id);
+        let album = albums.find(element => {
+            return element['id'] == event.target.id;
+        });
+        // console.log(album);
+        let info = document.createElement('p');
+        info.textContent = `${album.artist}: ${album.title}`;
+        textArea.appendChild(info);
+    }
+
     // add event listeners
     clearBtn.addEventListener('click', clearBin);
     submitBtn.addEventListener('click', postBin);
+    scrollWrapper.addEventListener('click', addToBin);
 })();
