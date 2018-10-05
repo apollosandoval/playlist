@@ -1,8 +1,9 @@
 (function() {
     let albumUrl = 'https://lit-fortress-6467.herokuapp.com/object';
-    let playlistUrl = '';
+    let playlistUrl = 'https://lit-fortress-6467.herokuapp.com/post';
     let scrollWrapper = document.querySelector('.scrolling-wrapper');
     let albums = [];
+    let stagingBin = [];
     let clearBtn = document.querySelector('#clearBtn');
     let submitBtn = document.querySelector('#submitBtn');
     let textArea = document.querySelector('.textarea');
@@ -31,19 +32,30 @@
 
     // event handlers
     let clearBin = function() {
-        console.log('clear');
+        stagingBin = [];
+        
+        while (textArea.firstChild) {
+            textArea.removeChild(textArea.firstChild);
+        }
     }
 
     let postBin = function() {
-        console.log('post');
+        axios.post(playlistUrl, stagingBin)
+            .then( response => {
+                console.log(response);
+                clearBin();
+            })
+            .catch( error => {
+                console.log(error);
+            })
     }
 
     let addToBin = function(event) {
-        console.log(event.target.id);
         let album = albums.find(element => {
             return element['id'] == event.target.id;
         });
-        // console.log(album);
+        
+        stagingBin.push(album);
         let info = document.createElement('p');
         info.textContent = `${album.artist}: ${album.title}`;
         textArea.appendChild(info);
