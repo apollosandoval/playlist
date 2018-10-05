@@ -3,6 +3,8 @@
     let playlistUrl = '';
     let scrollWrapper = document.querySelector('.scrolling-wrapper');
     let albums = [];
+    let clearBtn = document.querySelector('#clearBtn');
+    let submitBtn = document.querySelector('#submitBtn');
 
     axios.get(albumUrl)
         .then( response => {
@@ -25,4 +27,17 @@
 
         scrollWrapper.appendChild(albumEl);
     }
+
+    // event handlers
+    let clearBin = function() {
+        console.log('clear');
+    }
+
+    let postBin = function() {
+        console.log('post');
+    }
+
+    // add event listeners
+    clearBtn.addEventListener('click', clearBin);
+    submitBtn.addEventListener('click', postBin);
 })();
