@@ -33,7 +33,7 @@
     function generateAlbumCover(album) {
         let albumEl = document.createElement('div');
 
-        albumEl.className = 'album_container';
+        albumEl.className = 'album_container row';
         albumEl.setAttribute('id', `album${album.id}`);
         albumEl.innerHTML = `<img src='images/${album.cover_art}'>`
 
