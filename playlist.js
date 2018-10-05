@@ -42,7 +42,7 @@
     let postBin = function() {
         axios.post(playlistUrl, stagingBin)
             .then( response => {
-                console.log(response);
+                // console.log(response);
                 clearBin();
             })
             .catch( error => {

@@ -1,0 +1,67 @@
+:root {
+    --header-padding: 6vh;
+    --header-color: #9B9B8C;
+    --footer-color: #686859;
+    --btn-color: #363626;
+    --background-color: #EEEEEE;
+}
+
+@font-face {
+    font-family: 'avenirNext';
+    src: url('./fonts/AvenirNextLTPro-Regular.otf');
+}
+
+body > .container-fluid {
+    padding-top: var(--header-padding);
+    margin-bottom: var(--header-padding);
+    background-color: var(--background-color);
+    height: 94vh;
+}
+
+.navbar {
+    min-height: var(--header-padding);
+    background-color: var(--header-color);
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: var(--header-padding);
+    background-color: var(--footer-color);
+    color: whitesmoke;
+    font-size: 1.5rem;
+}
+
+.btn-secondary {
+    background-color: var(--btn-color);
+    font-family: 'avenirNext';
+    color: whitesmoke;
+    font-size: 1.5rem;
+}
+
+.background {
+    background: url('./resources/fadedTrack.jpg') center / cover;
+    padding-bottom: var(--header-padding);
+}
+
+.row {
+    height: inherit;
+}
+
+.album-container {
+    height: 33%;
+    padding: 10px;
+    padding-left: 33%;
+}
+
+.album-container img {
+    height: 100%;
+    width: auto;
+}
+
+.heading {
+    padding: 0;
+    font-size: 2.5rem;
+    color: #56106E;
+}
