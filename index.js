@@ -49,5 +49,4 @@
     // event listeners
     button.addEventListener('click', redirect);
 
-    module.exports = { albums };
 })();
