@@ -67,9 +67,10 @@ body > .container-fluid {
     margin: .5em;
 }
 
-.album-thumbail img {
-    height: auto;
-    width: 100%;
+img {
+    height: 100%;
+    width: auto;
+    margin: 1rem;
 }
 
 .heading {
@@ -92,4 +93,5 @@ body > .container-fluid {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
+    margin: 2rem;
 }
