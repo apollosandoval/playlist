@@ -21,7 +21,7 @@
         })
     
     function generateAlbumCover(album) {
-        let albumEl = document.createElement('span');
+        let albumEl = document.createElement('div');
 
         albumEl.className = 'album-thumbnail';
         albumEl.setAttribute('id', `album${album.id}`);
