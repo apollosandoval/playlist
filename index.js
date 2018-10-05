@@ -2,10 +2,12 @@
     let albumUrl = 'https://lit-fortress-6467.herokuapp.com/object';
     let playlistUrl = '';
     let railroadContainer = document.querySelector('#tracks');
+    let button = document.querySelector('#redirect');
+    let albums = [];
 
     axios.get(albumUrl)
         .then ( response => {
-            let albums = response.data.results;
+            albums = response.data.results;
             
             let randomAlbums = noRepeatCovers(albums);
             randomAlbums.forEach( album => {
@@ -39,4 +41,13 @@
 
         railroadContainer.appendChild(albumEl);
     }
+
+    function redirect() {
+        window.location = "./playlist.html";
+    }
+
+    // event listeners
+    button.addEventListener('click', redirect);
+
+    module.exports = { albums };
 })();

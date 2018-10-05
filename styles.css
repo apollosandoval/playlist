@@ -78,3 +78,9 @@ body {
     justify-content: center;
     height: 30%;
 }
+
+.scrolling-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
