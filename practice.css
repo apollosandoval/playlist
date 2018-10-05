@@ -13,7 +13,7 @@
 
 body > .container-fluid {
     padding-top: var(--header-padding);
-    margin-bottom: var(--header-padding);
+    /* margin-bottom: var(--header-padding); */
     background-color: var(--background-color);
     height: 94vh;
 }
@@ -38,6 +38,7 @@ body > .container-fluid {
     font-family: 'avenirNext';
     color: whitesmoke;
     font-size: 1.5rem;
+    margin: 1rem;
 }
 
 .background {
@@ -45,8 +46,8 @@ body > .container-fluid {
     padding-bottom: var(--header-padding);
 }
 
-.row {
-    height: inherit;
+.row.fill {
+    height: 100%;
 }
 
 .album-container {
@@ -64,4 +65,12 @@ body > .container-fluid {
     padding: 0;
     font-size: 2.5rem;
     color: #56106E;
+}
+
+.textarea {
+    border: 2px solid black;
+    height: 150px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-y: auto;
 }
