@@ -38,7 +38,7 @@ body > .container-fluid {
     font-family: 'avenirNext';
     color: whitesmoke;
     font-size: 1.5rem;
-    margin: 1rem;
+    margin: .5rem;
 }
 
 .background {
@@ -61,8 +61,21 @@ body > .container-fluid {
     width: auto;
 }
 
+.album-thumbnail {
+    height: 100px;
+    width: 100px;
+    margin: .5em;
+}
+
+.album-thumbail img {
+    height: 100%;
+    width: auto;
+}
+
 .heading {
+    margin: 1rem;
     padding: 0;
+    font-family: 'avenirNext';
     font-size: 2.5rem;
     color: #56106E;
 }
@@ -70,7 +83,13 @@ body > .container-fluid {
 .textarea {
     border: 2px solid black;
     height: 150px;
-    display: flex;
+    /* display: flex; */
     flex-wrap: nowrap;
     overflow-y: auto;
+}
+
+.scrolling-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
 }
